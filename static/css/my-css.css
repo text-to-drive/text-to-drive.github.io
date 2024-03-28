@@ -1,0 +1,204 @@
+.teaser-language-container, .teaser-prompt-container {
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.teaser-prompt-container{
+    /* right: 0;
+    position: absolute;
+    width: 50em;
+    margin-right: 5em; */
+    justify-content: right;
+    align-items: right;
+}
+
+.teaser-language-container {
+    margin-bottom: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.teaser-prompt-container {
+    margin-top: -5em;
+}
+
+.teaser-language {
+    padding: 0.8em; /* #b6d7a8ff*/
+    /* background-color:  #76103a; */
+    /* background: rgb(2,0,36);
+background: linear-gradient(160deg, rgba(2,0,36,1) 0%, rgba(118,16,58,1) 0%, rgba(171,29,88,1) 100%); */
+    background: rgb(2,0,36);
+    background: linear-gradient(93deg, rgba(2,0,36,1) 0%, rgba(118,16,58,1) 0%, rgba(23,80,139,1) 100%);
+    border-radius: 20px;
+    padding-left: 2em;
+    width: 100%;
+}
+
+.teaser-prompt {
+    width: 30em;
+    padding: 0.8em;
+    background-color:  rgb(173, 216, 253);
+    border-radius: 20px;
+    margin-bottom: 1em;
+    padding-left: 2em;
+    color: #1c4587;
+    right: 0 !important;
+    float: right;
+}
+
+.teaser-prompt h1{
+    font-size: 1.3em;
+    font-family: Raleway;
+}
+
+.teaser-prompt .user{
+    text-align: right;
+    position: absolute;
+    width: 2em;
+    margin-left: 25em;
+}
+
+.teaser-language .gpt{
+    position: absolute;
+    height: 3em;
+    margin-left: -1em;
+    margin-top: -0.3em;
+    vertical-align: middle;
+}
+
+.teaser-language h1 {
+    font-size: 1.6em;
+    color: rgb(255, 255, 255);
+    /* text-transform: uppercase; */
+    font-family: Raleway;
+    margin-left: 2em;
+}
+
+.teaser-language span {
+    border-right: .05em solid;
+    animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.teaser-trajectory-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.teaser-trajectory-container img{
+    height: 20em;
+    margin-top: -0.5em;
+} 
+
+#abstract-and-video{
+    background: rgb(219, 219, 219);
+}
+
+
+#results-carousel h1{
+    font-family: Raleway;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    color: black;
+    height: 3.2em;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* .item div{
+    background-color: #1c4587;
+} */
+
+.item-highway-1, .item-highway-2, .item-highway-3, .item-highway-4, .item-highway-5{
+    /* background: rgb(175,1,78);
+background: radial-gradient(circle, rgba(175,1,78,1) 0%, rgba(112,28,65,1) 100%); */
+    background: rgb(200, 200, 200);
+}
+
+.item-merge-1, .item-merge-2, .item-merge-3, .item-merge-4, .item-merge-5{
+    /* background: rgb(16,84,118);
+background: radial-gradient(circle, rgba(16,84,118,1) 0%, rgba(10,49,69,1) 100%); */
+    background: rgb(200, 200, 200);
+}
+
+.item-intersection-1, .item-intersection-2, .item-intersection-3, .item-intersection-4, .item-intersection-5{
+    /* background: rgb(175,114,43);
+    background: linear-gradient(137deg, rgba(175,114,43,1) 0%, rgba(201,141,21,1) 100%); */
+    background: rgb(200, 200, 200);
+}
+
+.vertical-align{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40vh; /* or any other height you desire */
+}
+
+#terminal {
+    background-color: black;
+    color: limegreen;
+    font-family: 'Courier New', Courier, monospace;
+    height: 200px; /* Adjust based on your preference */
+    overflow: hidden;
+    padding: 10px;
+    white-space: pre-wrap; /* Ensures text wraps and respects new lines */
+    width: 55em;
+    float: right;
+    margin-right: 5em;
+    border-radius: 20px;
+    font-size: 10px;
+    margin-top: 2em;
+}
+
+#terminal pre{
+    margin-top: 1em;
+    color: limegreen;
+    background-color: black;
+    padding: 1px;
+    font-size: 1.05em;
+}
+
+.ash-img-container img{
+    width: 80%;
+    margin-top: -6em;        
+    margin-left: 2.5em;
+}
+
+#state-summary .column{
+    text-align: center;
+    margin: 0 auto;
+}
+
+#misc .column{
+    text-align: center;
+    margin: 0 auto;
+}
+
+#misc p, #misc h2{
+    text-align: left !important;
+}
+
+
+#state-summary .summary-img{
+    width: 85%;
+    margin-top: -2em;
+}
+
+.vehicle-img, .summary-img {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Adjust duration and easing to your preference */
+}
+
+#llst-image {
+    transition: opacity 0.4s ease-in;
+    opacity: 0;
+}

@@ -1,10 +1,605 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Test</title>
-  </head>
-  <body>
-    <h1>Test</h1>
-    <p>This is a test.</p>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Text-to-Drive: Diverse Driving Behavior Synthesis via Large Language Models.">
+  <meta name="keywords" content="Text-to-Drive, Driving behavior synthesis, Large Language Models, T2D, LLM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Text-to-Drive: Diverse Driving Behavior Synthesis via Large Language Models</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/my-css.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+  
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 100%22><text y=%22.95em%22 font-size=%2290%22>🚗</text></svg>">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/my-js.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Text-to-Drive: Diverse Driving Behavior Synthesis via Large Language Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://peterng15.github.io/">Phat Nguyen</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://zswang666.github.io/">Tsun-Hsuan Wang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://williamd4112.github.io/">Zhangwei-Hong</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://karaman.mit.edu/">Sertac Karaman</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://danielarus.csail.mit.edu/">Daniela Rus</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>UMass Amherst,</span>
+            <span class="author-block"><sup>2</sup>MIT CSAIL,</span>
+            <span class="author-block"><sup>3</sup>MIT LIDS</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/docs/root.pdf"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv (TBU)</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=mdKRpLnAH5Y"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/PeterNg15/text-to-drive"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (TBU)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body" id="teaser">
+      <div class="teaser-language-container">
+        <div class="teaser-language">
+          <img src="static/images/chatgpt.png" class="gpt"/>
+          <h1>The vehicle continues to the end of the on-ramp before merging.</h1>
+        </div>
+      </div>
+      <div class="teaser-trajectory-container">
+        <img src="static/videos/teaser_trajectory_0.gif" id="teaser-trajectory"/>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">T2D</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+<div class="hero-body">
+  <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+    <source src="./static/videos/teaser.mp4"
+            type="video/mp4">
+  </video> -->
+  <div class="teaser-prompt-container">
+    <div class="teaser-prompt">
+      <img src="static/images/user.png" class="user"/>
+      <h1>Generate diverse driving behaviors</h1>
+    </div>
+  </div>
+  <div class="teaser-language-container" id="teaser">
+    <div class="teaser-language">
+      <img src="static/images/chatgpt.png" class="gpt"/>
+      <h1>The vehicle continues to the end of the on-ramp before merging.</h1>
+    </div>
+  </div>
+  <div class="teaser-trajectory-container">
+    <img src="static/videos/teaser_trajectory_0.gif" id="teaser-trajectory"/>
+  </div>
+  <h2 class="subtitle has-text-centered">
+    <span class="dnerf">T2D</span> employs the embedded knowledge of LLMs to generate diverse driving <br/>behaviors and then synthesizes them in simulation.
+  </h2>
+</div>
+
+
+<section class="section" id="abstract-and-video">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Generating varied scenarios through simulation is crucial for training and evaluating safety-critical systems, such as autonomous vehicles. Yet, the task of modeling the trajectories of other vehicles to simulate diverse and meaningful close interactions remains prohibitively costly. Adopting language descriptions to generate driving behaviors emerges as a promising strategy, offering a scalable and intuitive method for human operators to simulate a wide range of driving interactions. However, the scarcity of large-scale annotated language-trajectory data makes this approach challenging.
+          </p>
+          <p>
+            To address this gap, we propose Text-to-Drive (T2D) to synthesize diverse driving behaviors via Large Language Models (LLMs). We introduce a knowledge-driven approach that operates in two stages. In the first stage, we employ the embedded knowledge of LLMs to generate diverse language descriptions of driving behaviors for a scene. Then, we leverage LLM's reasoning capabilities to synthesize these behaviors in simulation. At its core, T2D employs an LLM to construct a state chart that maps low-level states to high-level abstractions. This strategy aids in downstream tasks such as summarizing low-level observations, assessing policy alignment with behavior description, and shaping the auxiliary reward, all without needing human supervision. With our knowledge-driven approach, we demonstrate that T2D generates more diverse trajectories compared to other baselines and offers a natural language interface that allows for interactive incorporation of human preference.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/mdKRpLnAH5Y?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Highway</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-highway-1" id="highway-1">
+          <div>
+            <h1 class="title is-5">Tailgating</h1>
+          </div>
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/12_tailgating_highway_multi.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-highway-2">
+          <div>
+            <h1 class="title is-5">Accelerate in congestion</h1>
+          </div>
+          <video poster="" id="highway-2" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/13_accelerative_highway.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-highway-3">
+          <div>
+            <h1 class="title is-5">Side-by-Side Driving</h1>
+          </div>
+          <video poster="" id="highway-3" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/14_parallel_lane_highway.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-highway-4">
+          <div>
+            <h1 class="title is-5">Maintain a safe distance</h1>
+          </div>
+          <video poster="" id="highway-4" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/15_safe_distance_highway.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-highway-5">
+          <div>
+            <h1 class="title is-5">Lane weaving
+            </h1>
+          </div>
+          <video poster="" id="highway-5" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/16_lane_weaving_highway.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Merge</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-merge-1">
+          <div>
+            <h1 class="title is-5">Decelerate on on-ramp</h1>
+          </div>
+          <video poster="" id="merge-1" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/6_early_deceleration_merge.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-merge-2">
+          <div>
+            <h1 class="title is-5">Reduce speed after merging</h1>
+          </div>
+          <video poster="" id="merge-2" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/7_sudden_braking_merge.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-merge-3">
+          <div>
+            <h1 class="title is-5">Late merging</h1>
+          </div>
+          <video poster="" id="merge-3" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/8_late_merger.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-merge-4">
+          <div>
+            <h1 class="title is-5">Accelerative merging</h1>
+          </div>
+          <video poster="" id="merge-4" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/9_accelerative_merger.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-merge-5">
+          <div>
+            <h1 class="title is-5">Merging from a complete stop</h1>
+          </div>
+          <video poster="" id="merge-5" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/11_complete_stop_on_ramp_highway.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Intersection</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-intersection-1">
+          <div>
+            <h1 class="title is-5">Reduce speed through intersection</h1>
+          </div>
+          <video poster="" id="intersection-1" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/0_decelerating_through_intersection.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-intersection-2">
+          <div>
+            <h1 class="title is-5">Accelerate through intersection</h1>
+          </div>
+          <video poster="" id="intersection-2" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/5_rapid_acceleration.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-intersection-3">
+          <div>
+            <h1 class="title is-5">Abrupt stop in the intersection</h1>
+          </div>
+          <video poster="" id="intersection-3" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/2_abrupt_full_stop.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-intersection-4">
+          <div>
+            <h1 class="title is-5">Cross at a consistent speed</h1>
+          </div>
+          <video poster="" id="intersection-4" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/1_consistent_speed_through_intersection.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-intersection-5">
+          <div>
+            <h1 class="title is-5">Rolling stop at intersection</h1>
+          </div>
+          <video poster="" id="intersection-5" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/4_rolling_stop.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Low Level State Translator-->
+    <div class="columns is-centered">
+      <div class="column vertical-align">
+        <h2 class="title is-3">Low-Level State Translator</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              The low-level state translator has three primary responsibilities: it (1) decomposes the behavior, (2) maps lower-level states to abstract states, and (3) records abstract state visits. As a result, the state translator takes in the low-level states and outputs the the history of abstract state visits.
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <div class="column">
+        <div class="content is-centered">
+          <img src="static/images/llst/llst_overview_0.png" id="llst-image"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered" style="margin-top: 6em;">
+      <div class="column">
+        <div class="content">
+          <div id="terminal"></div>
+          <div class="ash-img-container">
+            <img src="static/images/history/history_0.png">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Abstract state history -->
+      <div class="column">
+        <h2 class="title is-3">Abstract State History</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              The abstract state history is a record of abstract states visits by the vehicle. This enables both the ability to identify current state occupancy and track state visits and transitions. 
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Primary Function -->
+    <div class="columns is-centered">
+      <div class="column vertical-align">
+        <h2 class="title is-3">Primary Function</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              The primary function gives a reward only when the vehicle exhibits the target behavior, using a finite-state machine for formal verification of behavior emergence.
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <div class="column">
+        <div class="content is-centered">
+          <img src="static/images/fsm/fsm_overview_2.png" id="fsm-image"/>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- <h2 class="title is-3">Downstream Tasks</h2> -->
+
+        <!-- Interpolating. -->
+        <h3 class="title is-3">Summarizing rollouts</h3>
+        <div class="content has-text-justified">
+          <p>
+            Here, we demonstrate the LLM's reasoning process, where it reads a high-level behavior sequence, analyuzes it, and then provides an accurate summary of the low-level trajectories. The behavior we wished to simulate is "coming to a complete stop before merging."
+          </p>
+        </div>
+        <div id="state-summary">
+          <div class="column  is-centered">
+            <img src="static/videos/summary_demo.gif" width="450em" style="border-radius: 20px;">
+          </div>
+          <div class="columns is-centered">
+            <div class="column">
+              <img src="static/images/summary/vehicle1.png" class="vehicle-img">
+            </div>
+            <div class="column">
+              <img src="static/images/summary/vehicle2.png" class="vehicle-img">
+            </div>
+            <div class="column">
+              <img src="static/images/summary/vehicle3.png" class="vehicle-img">
+            </div>
+          </div>
+          <div class="column">
+            <img src="static/images/summary/summary_4.png" class="summary-img">
+          </div>
+        </div>
+        
+        <br/>
+        <div class="columns is-centered" id="misc">
+          <div class="column">
+            <h2 class="title is-4">Auxiliary Iterator</h2>
+            <div class="columns is-centered">
+              <div class="column content">
+                <p>
+                  The auxiliary iterator LLM analyzes the policy after training to decide whether and how to adjust the auxiliary function based on the history of abstract state visits.
+                </p>
+                <img src="static/images/misc/iterator.png" style="width: 80%">
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <h2 class="title is-4">Human Preference (Optional)</h2>
+            <div class="columns is-centered">
+              <div class="column content">
+                <p>
+                  T2D also offers a natural language interface to incorporate human preferences into the driving trajectories.
+                </p>
+                <img src="static/images/misc/human_preference.png" style="width: 70%">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-3">Overview</h3>
+        <!-- <div class="content has-text-justified">
+          <p>
+            Using <span class="dnerf">T2D</span>, we can turn a text description of a driving behavior into a driving policy for simulation. 
+          </p>
+        </div> -->
+        <div class="content has-text-centered">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/t2d-web-demo.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/docs/root.pdf" target="_blank">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/PeterNg15/" class="external-link" disabled target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>
