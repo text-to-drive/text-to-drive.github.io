@@ -103,7 +103,7 @@ background: linear-gradient(160deg, rgba(2,0,36,1) 0%, rgba(118,16,58,1) 0%, rgb
 }
 
 
-#results-carousel h1{
+.results-carousel h1{
     font-family: Raleway;
     padding-left: 1em;
     padding-right: 1em;
@@ -114,25 +114,9 @@ background: linear-gradient(160deg, rgba(2,0,36,1) 0%, rgba(118,16,58,1) 0%, rgb
     text-align: center;
 }
 
-/* .item div{
-    background-color: #1c4587;
-} */
-
-.item-highway-1, .item-highway-2, .item-highway-3, .item-highway-4, .item-highway-5{
+.results-carousel .item{
     /* background: rgb(175,1,78);
 background: radial-gradient(circle, rgba(175,1,78,1) 0%, rgba(112,28,65,1) 100%); */
-    background: rgb(200, 200, 200);
-}
-
-.item-merge-1, .item-merge-2, .item-merge-3, .item-merge-4, .item-merge-5{
-    /* background: rgb(16,84,118);
-background: radial-gradient(circle, rgba(16,84,118,1) 0%, rgba(10,49,69,1) 100%); */
-    background: rgb(200, 200, 200);
-}
-
-.item-intersection-1, .item-intersection-2, .item-intersection-3, .item-intersection-4, .item-intersection-5{
-    /* background: rgb(175,114,43);
-    background: linear-gradient(137deg, rgba(175,114,43,1) 0%, rgba(201,141,21,1) 100%); */
     background: rgb(200, 200, 200);
 }
 
